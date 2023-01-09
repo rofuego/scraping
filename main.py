@@ -7,7 +7,7 @@ url = 'https://www.mtggoldfish.com/archetype/pioneer-mono-white-humans#paper'
 scraper = pd.read_html(url)
 
 response = requests.get(url)
-bs = BeautifulSoup(response.text, "html.parser")
+bs = BeautifulSoup(response.content, "html.parser")
 title = bs.find(class_="title").text.split("\n")[1]
 format = bs.find(class_="deck-container-information").text.split("\n")[1]
 
